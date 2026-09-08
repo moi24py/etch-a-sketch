@@ -18,8 +18,14 @@ function makeGrid(cellsQty){
         cell.style.width = `${width}%`;
         cell.classList.add(".cell");
     
-        // Change the cell color on mouse enter 
+        // Set a minimum opacity level to the cell
+        let opacity = 0.1;
+        
         cell.addEventListener("mouseenter", () => {
+            // Increase the opacity of a cell after each interaction
+            opacity += 0.1;
+            cell.style.opacity = opacity;
+            // Change the cell color on mouse enter 
             let r = Math.floor(Math.random() * 255);
             let g = Math.floor(Math.random() * 255);
             let b = Math.floor(Math.random() * 255);
