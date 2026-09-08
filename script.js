@@ -19,5 +19,19 @@ function makeGrid(cellsQty){
     }
 }
 
-
+// Ask the user the number of cells per side
+let squarePerSide = 0;
+promptBtn.addEventListener("click", () => {
+    grid.replaceChildren(); // Clear the grid before creating a new one
+    do {
+        squarePerSide = Number(prompt("Squares per side ( 1 < x < 100 ): "));
+    }
+    while(
+        !Number.isInteger(squarePerSide) || 
+        squarePerSide < 1 ||
+        squarePerSide > 100
+        );
+    
+    makeGrid(squarePerSide);
+});
 
