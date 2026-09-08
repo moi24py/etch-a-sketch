@@ -1,14 +1,23 @@
 const grid = document.querySelector(".grid");
+const promptBtn = document.querySelector("#prompt-btn");
 
-// Make 256 squared divs
-for (let i = 0; i < 256; i++){
-    const cell = document.createElement("div");
-    cell.setAttribute("style", "width: 6.25%; aspect-ratio: 1; border: 1px solid red; padding: 0; margin: 0; box-sizing: border-box;");
-    cell.classList.add(".cell");
+
+// Make a NxN grid with square divs
+function makeGrid(cellsQty){
+    for (let i = 0; i < cellsQty**2; i++){
+        const cell = document.createElement("div");
+        cell.setAttribute("style", "aspect-ratio: 1; background-color: teal; border: 1px solid white; box-sizing: border-box;");
+        let width = 100/squarePerSide;
+        cell.style.width = `${width}%`;
+        cell.classList.add(".cell");
     
-    cell.addEventListener("mouseenter", () => {
-        cell.style.backgroundColor = "white";
-    });
+        cell.addEventListener("mouseenter", () => {
+            cell.style.backgroundColor = "white";
+        });
 
-    grid.appendChild(cell);
+        grid.appendChild(cell);
+    }
 }
+
+
+
