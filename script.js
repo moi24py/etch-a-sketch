@@ -1,6 +1,13 @@
 const grid = document.querySelector(".grid");
 const promptBtn = document.querySelector("#prompt-btn");
 
+// Randomize the squares’ RGB values with each interaction
+function randomColor() {
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    return `rgb(${r},${g},${b})`;
+}
 
 // Make a NxN grid with square divs
 function makeGrid(cellsQty){
@@ -11,8 +18,12 @@ function makeGrid(cellsQty){
         cell.style.width = `${width}%`;
         cell.classList.add(".cell");
     
+        // Change the cell color on mouse enter 
         cell.addEventListener("mouseenter", () => {
-            cell.style.backgroundColor = "white";
+            let r = Math.floor(Math.random() * 255);
+            let g = Math.floor(Math.random() * 255);
+            let b = Math.floor(Math.random() * 255);
+            cell.style.backgroundColor = randomColor();
         });
 
         grid.appendChild(cell);
@@ -34,4 +45,3 @@ promptBtn.addEventListener("click", () => {
     
     makeGrid(squarePerSide);
 });
-
