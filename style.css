@@ -1,8 +1,33 @@
 body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .grid {
+    width: 80vh;
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
+    aspect-ratio: 1;
+    border: 3px dashed teal;
+}
+
+.prompt-div {
+    margin: 20px auto;
+}
+
+#prompt-btn {
+    padding: 20px;
+    text-transform: uppercase;
+    background-color: teal;
+    border: 1px solid teal;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 5px 5px rgb(21, 73, 73);
 }
